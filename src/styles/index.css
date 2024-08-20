@@ -1,12 +1,20 @@
+#redButton {
+  width: 120px;
+  height: 120px;
+  background: red;
+  border-radius: 50px;
+}
 
-/* 
+#yellowButton {
+  width: 120px;
+  height: 120px;
+  background: yellow;
+  border-radius: 50px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+#greenButton {
+  width: 120px;
+  height: 120px;
+  background: green;
+  border-radius: 50px;
+}
