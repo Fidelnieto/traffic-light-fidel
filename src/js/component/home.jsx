@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //create your first component
 const Home = () => {
-  const [selectedButton, setSelectedButton] = useState(null); // Estado para el botón seleccionado
+  const [selectedButton, setSelectedButton] = useState(false);
 
   const handleClick = (buttonId) => {
-    setSelectedButton(buttonId); // Actualiza el botón seleccionado
+    setSelectedButton(buttonId);
   };
+
+  useEffect(effectFunction, dependencyArray);
+
+  const dependencyArray = [selectedButton];
+
+  function effectFunction() {
+    console.log("Traffic light changed!");
+  }
 
   return (
     <div className="mt-5">
@@ -20,17 +28,27 @@ const Home = () => {
       >
         <div id="redLight">
           <button
-            className={`redButton ${selectedButton === "red" ? 'selected' : ''}`}
-            onClick={() => handleClick('red')}
+            className={`redButton ${
+              selectedButton === "red" ? "selected" : ""
+            }`}
+            onClick={() => handleClick("red")}
           ></button>
         </div>
         <div id="yellowLight">
-          <button className={`yellowButton ${selectedButton === "yellow" ? 'selected' : ''}`}
-            onClick={() => handleClick('yellow')}></button>
+          <button
+            className={`yellowButton ${
+              selectedButton === "yellow" ? "selected" : ""
+            }`}
+            onClick={() => handleClick("yellow")}
+          ></button>
         </div>
         <div id="greenLight">
-          <button className={`greenButton ${selectedButton === "green" ? 'selected' : ''}`}
-            onClick={() => handleClick('green')}></button>
+          <button
+            className={`greenButton ${
+              selectedButton === "green" ? "selected" : ""
+            }`}
+            onClick={() => handleClick("green")}
+          ></button>
         </div>
       </div>
     </div>
