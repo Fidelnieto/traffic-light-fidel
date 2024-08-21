@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 //create your first component
 const Home = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [selectedButton, setSelectedButton] = useState(null); // Estado para el botón seleccionado
 
-  const handleClick = () => {
-    setIsActive(!isActive);
+  const handleClick = (buttonId) => {
+    setSelectedButton(buttonId); // Actualiza el botón seleccionado
   };
 
   return (
@@ -20,16 +20,17 @@ const Home = () => {
       >
         <div id="redLight">
           <button
-            id="redButton"
-            className="mx-auto mt-3"
-            onClick={handleClick}
+            className={`redButton ${selectedButton === "red" ? 'selected' : ''}`}
+            onClick={() => handleClick('red')}
           ></button>
         </div>
         <div id="yellowLight">
-          <button id="yellowButton" className="mx-auto mt-2"></button>
+          <button className={`yellowButton ${selectedButton === "yellow" ? 'selected' : ''}`}
+            onClick={() => handleClick('yellow')}></button>
         </div>
         <div id="greenLight">
-          <button id="greenButton" className="mx-auto mt-2"></button>
+          <button className={`greenButton ${selectedButton === "green" ? 'selected' : ''}`}
+            onClick={() => handleClick('green')}></button>
         </div>
       </div>
     </div>

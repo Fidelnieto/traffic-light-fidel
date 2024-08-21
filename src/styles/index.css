@@ -1,20 +1,27 @@
-#redButton {
+.redButton {
   width: 120px;
   height: 120px;
   background: red;
   border-radius: 50px;
+  margin-top: 20px;
 }
 
-#yellowButton {
+.yellowButton {
   width: 120px;
   height: 120px;
   background: yellow;
   border-radius: 50px;
+  margin-top: 20px;
 }
 
-#greenButton {
+.greenButton {
   width: 120px;
   height: 120px;
   background: green;
   border-radius: 50px;
+  margin-top: 20px;
+}
+
+.selected{
+  background-color: gray;
 }
